@@ -17,7 +17,9 @@
     --noir:#1C1D21;
     --noir-transparant:#00000063;
     --degrade-noir-bas:linear-gradient(0deg, rgba(44,45,51,1) 0%, rgba(35,36,42,1) 100%);
+    --degrade-blanc-bas:linear-gradient(0deg, rgba(236,236,236,1) 0%, rgba(255,255,255,1) 100%);
 }
+
 
 body{
     background-color: var(--noir_principal);
@@ -49,7 +51,7 @@ i:hover{
 }
 hr{
     border: var(--bleu_ciel) solid 1px;
-    width: calc(50px + 1vw);
+    width: calc(55px + 1vw);
 }
 h2{
     color: var(--blanc_principal);
@@ -154,7 +156,7 @@ a{
         position: fixed;
         width: 100%;
         margin-top: 128px;
-        z-index: 2;
+        z-index: 8;
     }
     nav{
         height: 150px;
@@ -163,7 +165,7 @@ a{
         overflow-x: scroll;
     }
     .nav{
-        z-index: 2;
+        z-index: 8;
     }
     nav img{
         width: 150px;
@@ -405,7 +407,7 @@ footer a{
 }
 @media (min-width: 650px) {
     .articlesecondaire{
-        width: 500px !important;
+        width: 325px !important;
     }
 }
 /*     actu terciaire    */
@@ -472,6 +474,7 @@ footer a{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 100px;
 }
 
 .separation{
@@ -488,7 +491,11 @@ footer a{
 .quiz{
     font-size: 120px;
 }
-
+@media (min-width : 650px){
+    .jeux{
+        margin-bottom: 250px !important;
+    }
+}
 /*       QUIZ     */
 
 #espacejoueur{
@@ -499,13 +506,15 @@ footer a{
     align-items: center;
     flex-direction: column;
     background: var(--noir_secondaire);
-    margin-top: 130px;
+    margin-top: 100px;
     border-radius: 5px;
     color: var(--blanc_principal);
+    margin-bottom: 150px;
+    
 }
 #question{
     width: 100%;
-    height: 500px;
+    height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -522,8 +531,276 @@ footer a{
 #formulaire input{
     width: 1000px;
     height: 25px;
+    background: var(--noir);
+    border: var(--blanc_principal) 1px solid;
+    color: var(--blanc_principal);
 }
 #formulaire button{
     width: 100px;
     height: 30px;
+}
+@media (min-width : 650px){
+    #espacejoueur{
+        margin-bottom: 450px !important;
+    }
+
+}
+
+@media (min-width : 1100px){
+    #espacejoueur{
+        width: max-content !important;
+    }
+}
+
+
+
+/*   7 ERREURS   */
+
+#imgerreur{
+    background: url(/image/Jeu\ Des\ 7\ Erreurs\ Jeux\ Des\ 7\ Erreurs\,\ 7\ Erreurs\ Et\ Erreur\ à\ Trouver\ Les\ 7\ Erreurs.jpg);
+    width: 500px;
+    height: 800px;
+    background-size: cover;
+    z-index: 0;
+    background-position: center;
+    position: absolute;
+}
+
+#imgerreur div{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    position: relative;
+}
+#erreur1{
+    bottom: -580px;
+    left: 205px;
+}
+#erreur2{
+    bottom: -450px;
+    left: 250px;
+}
+#erreur3{
+    bottom: -550px;
+    left: 275px;
+}
+#erreur4{
+    bottom: -530px;
+    left: 250px;
+    width: 32px !important;
+    height: 32px !important;
+}
+#erreur5{
+    bottom: -390px;
+    left: 320px;
+}
+#erreur6{
+    bottom: -255px;
+    left: 100px;
+}
+
+#erreur7{
+    bottom: -210px;
+    left: 365px;
+}
+
+.point{
+    border: red solid 3px;
+    transition: 0.1s;
+}
+#score{
+    text-align: center;
+}
+.score{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    z-index:3 ;
+    align-items: end;
+}
+.score p{
+    color: var(--noir);
+    font-size: calc(13px + 0.5vw);
+}
+.espacejoueur{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    transform: scale(1.2);
+}
+.espace{
+    margin-top: 650px;
+}
+@media (max-width: 650px){
+    .espacejoueur{
+        transform: scale(0.84);
+    }
+}
+@media (max-width: 410px){
+    .espacejoueur{
+        transform: scale(0.55) !important;
+    }
+}
+@media (min-width : 650px){
+    .espace{
+        margin-top: 950px !important;
+    }
+}
+
+/*      HOROSCOPE     */
+
+.bandeau{
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*          Flip card       */
+
+.flip-card{
+    height: calc(500px + 5vw);
+    width: calc(300px + 5vw);
+    background-color: var(--noir_secondaire);
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+.flip-card-inner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    
+}
+.flip-card-derriere{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: rotateY(180deg);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: auto;
+}
+.flip-card-face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card p{
+    font-size: calc(12px + 0.3vw);
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+  .flip-card span{
+    font-size: calc(13px + 0.3vw);
+  }
+.flip-card img{
+    background: var(--degrade-noir-bas);
+    border-radius: 50px;
+}
+  .body3{
+    margin-right: 15px;
+    margin-left:15px ;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@media (min-width : 650px){
+    .body3{
+        justify-content: space-around !important;
+    }
+}
+
+/*    CONTACT    */
+
+
+.item{
+    background-color: var(--noir_secondaire);
+    width: 600px;
+    height: max-content;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.item i{
+    font-size: 42px;
+    color: var(--blanc_principal);
+    margin-bottom: 10px;
+}
+
+.item a{
+    font-size: calc(12px + 0.5vw);
+}
+.item p{
+    font-size: calc(12px + 0.5vw);
+}
+.sousitem{
+    text-align: center;
+}
+@media (max-width: 650px){
+    .item iframe{
+        display: none;
+    }
+    .item{
+        width: 90% !important;
+    }
+}
+
+/* Reseaux  */
+
+
+.reseaux i{
+    font-size: 42px;
+    width: 180px;
+    text-align: center;
+}
+
+.reseaux{
+    background-color: var(--noir_secondaire);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 600px;
+    margin-top: 40px;
+    padding: 20px;
+    height: 400px;
+    margin-bottom: 40px;
+    border-radius: 5px;
+}
+.reseaux a{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.reseaux p{
+    font-size: calc(12px + 0.5vw);
+}
+
+@media (max-width: 650px){
+    .reseaux{
+        width: 90% !important;
+    }
 }
