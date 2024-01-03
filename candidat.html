@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
-        <title>🇲🇫Accueil</title>
+        <title>🇲🇫candidat</title>
 </head>
 <body>
     <header>
@@ -21,7 +21,7 @@
                         <li><a href="./mouvement.html">Objectifs</a></li>
                        
                       </ul></li>
-                   >
+                   
                       <li><a href="">Candidate</a>
                           <ul class="sub-menu3">
                               <li><a href="./candidat.html">La Candidate IDEALE</a></li>
@@ -58,6 +58,17 @@
     </div>
   </div>
   <br><br>
+  <button class="open-popup-button">Information sur la candidate</button>
+
+
+  <div class="overlay" id="overlay">
+      <div class="popup">
+          <span class="close-button" id="close-button">&times;</span>
+          <h2> La candidate du parti LFE</h2>
+          <img src="./images/Gtw.png" alt="" width=1000vw height="700vh">
+      </div>
+  </div>
+<br><br>
   <h1>Les Membres</h1>
   <br><br><br><br><br> <br><br>
   <div class="box1">
@@ -92,5 +103,19 @@
   <br><br>
   <p class="fleche"><a href="#">▲</a></p>
 <footer><a href="./mentions legales.html">mentions legales</a> </footer>
+<script>
+  // 
+  const openButton = document.querySelector(".open-popup-button");
+  const overlay = document.getElementById("overlay");
+  const closeButton = document.getElementById("close-button");
+
+  openButton.addEventListener("click", () => {
+      overlay.style.display = "flex";
+  });
+
+  closeButton.addEventListener("click", () => {
+      overlay.style.display = "none";
+  });
+ </script> 
 </body>
 </html>
